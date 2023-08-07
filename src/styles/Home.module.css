@@ -229,7 +229,7 @@
 }
 .terminal {
 	width: 450px;
-	height: 250px;
+	height: 260px;
   background-color: rgba(65, 61, 61, 0.5); 
 	color: rgb(48, 134, 255);
   font-family: 'Roboto', monospace; /* Use Roboto font */
@@ -267,6 +267,13 @@
   position: absolute;
   left: 0;
 }
+.styledList li:hover {
+  background-color: #f0f0f0; /* Highlight color when hovered */
+}
+
+.highlighted {
+  background-color: #f0f0f0; /* Highlight color when the button is clicked */
+}
 .img {
   width: 50px;
   height: 50px;
@@ -278,4 +285,20 @@
   flex-direction: row;
   gap: 20px;
   padding: 10px;
+}
+
+
+/* SocialLinks.module.css */
+
+.socialContainer {
+
+  
+}
+.socialIcon {
+  width: 20px;
+  height: 20px;
+  flex-direction: row;
+margin-right: 10px;
+  margin-top: 5px;
+
 }

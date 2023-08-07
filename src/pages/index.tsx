@@ -2,28 +2,28 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Borel, Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import React, { useEffect } from 'react';
+import React, { useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
+
+
 export default function Home() {
-  const handleKeyDown = (event:any) => {
-    if (event.key === 'ArrowUp') {
-      // Handle moving the selection up
-      event.preventDefault(); // Prevent default behavior
-    } else if (event.key === 'ArrowDown') {
-      // Handle moving the selection down
-      event.preventDefault(); // Prevent default behavior
+
+  const ulRef = useRef<HTMLUListElement | null>(null);
+
+  const handleButtonClick = () => {
+    if (ulRef.current) {
+      const listItems = ulRef.current.querySelectorAll('li');
+      // Modify or style the selected list items here
+      for (let i = 0; i < listItems.length; i++) {
+        listItems[i].classList.add(styles.highlighted);
+      }
     }
   };
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
 
 
   return (
@@ -34,47 +34,65 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+oFn7jsqfW4M02v42PxTKX1TxIa8309I5RngXuJswb0sz7+"  />
+
+
       </Head>
+
+
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.description}>
 
-          <div>
-
-          </div>
         </div>
 
         <div className={styles.center}>
         <div className={styles.terminal}>
-<div className={styles.name}>
+            <div className={styles.name}>
 
-        <Image
-        src="https://i.ibb.co/XXw5GB4/avatar-removebg-preview.png" // Replace with the actual path to your image
-        alt="Description of the image"
-        width={50}
-        height={50}
+                    <Image
+                    src="https://i.ibb.co/XXw5GB4/avatar-removebg-preview.png" // Replace with the actual path to your image
+                    alt="Description of the image"
+                    width={50}
+                    height={50}
 
-        style={{ borderRadius: '50%', border: '3px solid white', display: 'inline-block' }}
-      />  
-      <h3>MD_WALIUL_ISLAM_NOHAN</h3>
-</div>
+                    style={{ borderRadius: '50%', border: '3px solid white', display: 'inline-block' }}
+                  />  
+                  <h3>MD_WALIUL_ISLAM_NOHAN</h3>
+            </div>
 
                 
 
 					<span>~/portfolio/  ls </span>
-					<ul className={styles.styledList} >
-						<li>
-							<a href="https://dribbble.com/waliulislamnohan">Design_projects</a>
-						</li>
-						<li>
-							<a href="https://github.com/Waliulislamnohan">Development_projects</a>
-						</li>
-						<li>
-							<a href="https://devpost.com/waliulnohan">Robotics_project</a>
-						</li>
-						<li>
-							<a href="https://ibb.co/tLbkRbc">Experience</a>
-						</li>
-						</ul>
+              <div>
+              <ul className={styles.styledList} ref={ulRef}>
+                <li>
+                  <a href="https://dribbble.com/waliulislamnohan">Design_projects</a>
+                </li>
+                <li>
+                  <a href="https://github.com/Waliulislamnohan">Development_projects</a>
+                </li>
+                <li>
+                  <a href="https://devpost.com/waliulnohan">Robotics_project</a>
+                </li>
+                <li>
+                  <a href="https://ibb.co/tLbkRbc">Experience</a>
+                </li>
+              </ul>
+              <button onClick={handleButtonClick}>Change Style</button>
+
+              </div>
+              <div className={styles.socialContainer}>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+        <FontAwesomeIcon icon={faFacebook} className={styles.socialIcon} />
+      </a>
+      <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+        <FontAwesomeIcon icon={faTwitter} className={styles.socialIcon} />
+      </a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+        <FontAwesomeIcon icon={faLinkedin} className={styles.socialIcon} />
+      </a>
+               </div>
+              
 				</div>
         </div>
 
