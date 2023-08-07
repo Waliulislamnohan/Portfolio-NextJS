@@ -78,17 +78,17 @@ export default function Home() {
                   <a href="https://ibb.co/tLbkRbc">Experience</a>
                 </li>
               </ul>
-              <button onClick={handleButtonClick}>Change Style</button>
+
 
               </div>
               <div className={styles.socialContainer}>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+              <a href="https://www.facebook.com/waliulislamnohan/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
         <FontAwesomeIcon icon={faFacebook} className={styles.socialIcon} />
       </a>
-      <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+      <a href="https://twitter.com/WaliulNohan" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
         <FontAwesomeIcon icon={faTwitter} className={styles.socialIcon} />
       </a>
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+      <a href="https://www.linkedin.com/in/md-waliul-islam-nohan/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
         <FontAwesomeIcon icon={faLinkedin} className={styles.socialIcon} />
       </a>
                </div>
