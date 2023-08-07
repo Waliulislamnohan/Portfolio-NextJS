@@ -240,7 +240,22 @@
   animation: glowing 3s infinite;
 
 }
+/* Tablet (landscape) styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .terminal {
+    width: 96%;
+    margin: 0 auto;
+  }
+}
 
+/* Mobile styles */
+@media (max-width: 767px) {
+  .terminal {
+    width: 95%;
+    margin: 0 auto;
+
+  }
+}
 @keyframes glowing {
   0%, 100% {
     box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Blue glow */
