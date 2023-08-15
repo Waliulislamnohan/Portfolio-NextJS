@@ -30,7 +30,7 @@ export default function Home() {
     <>
       <Head>
         <title>MD Waliul Islam Nohan</title>
-        <meta name="description" content="MD Waliul Islam Nohan" />
+        <meta name="description" content="MD Waliul Islam Nohan - Portfolio Card" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
@@ -75,7 +75,7 @@ export default function Home() {
                   <a href="https://devpost.com/waliulnohan">Robotics_project</a>
                 </li>
                 <li>
-                  <a href="https://ibb.co/tLbkRbc">Experience</a>
+                  <a href="https://ibb.co/tXRTFpq">Experience</a>
                 </li>
               </ul>
 
