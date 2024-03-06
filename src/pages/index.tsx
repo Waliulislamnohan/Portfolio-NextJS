@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Borel, Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
@@ -25,7 +25,21 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+    // Add the script for the chat widget here
+    const script = document.createElement('script');
+    script.src = 'https://retune.so/api/script/beta/chat.js?id=11eec5dd-f304-1780-9354-8d479669480a';
+    script.type = 'module';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
 
+    // Cleanup script on component unmount
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+	
   return (
     <>
       <Head>
